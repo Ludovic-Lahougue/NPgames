@@ -1,6 +1,7 @@
 <script>
 	import Footer from "../../lib/footer.svelte";
+	import Title from "../../lib/title.svelte";
 </script>
 
-<div>Scores page</div>
+<Title subTitle="Scores" />
 <Footer />

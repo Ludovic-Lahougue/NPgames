@@ -1,5 +1,10 @@
+<script>
+	import DefaultButton from "../../lib/defaultButton.svelte";
+	import Title from "../../lib/title.svelte";
+</script>
+
 <main>
-	<h1>Inscription</h1>
+	<Title subTitle="Inscription" />
 	<form action="?/register" method="post" class="row flex-center flex">
 		<div class="col-6 form-widget">
 			<h1 class="header">Création du compte</h1>
@@ -34,7 +39,10 @@
 					value={"S'inscrire"}
 				/>
 			</div>
-			<a href="/connexion">Déjà un compte ?</a>
+			<div>
+				Déjà un compte ?
+				<DefaultButton link="/connexion" label="Se connecter" />
+			</div>
 		</div>
 	</form>
 </main>
