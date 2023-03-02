@@ -1,8 +1,8 @@
 <script>
 	const tab = [
-		{ label: "Scores", link: "", img: "" },
-		{ label: "Home", link: "", img: "" },
-		{ label: "Account", link: "", img: "" },
+		{ label: "Scores", link: "/scores", img: "" },
+		{ label: "Home", link: "/", img: "" },
+		{ label: "Account", link: "/profile", img: "" },
 	];
 </script>
 
