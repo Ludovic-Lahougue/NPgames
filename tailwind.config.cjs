@@ -9,6 +9,7 @@ module.exports = {
       darkblue: "#2E3244",
       grey: "#C5C6C6",
       white: "#FFFFFF",
+      transparent: "transparent",
     }
   },
   plugins: [],
