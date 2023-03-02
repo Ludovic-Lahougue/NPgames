@@ -190,6 +190,10 @@ input[disabled] {
     color: var(--custom-color-secondary);
 }
 
+textarea, option {
+    color: #000;
+}
+
 /* Utils */
 
 .block {
