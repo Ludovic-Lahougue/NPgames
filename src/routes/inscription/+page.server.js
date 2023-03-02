@@ -7,7 +7,12 @@ export const actions = {
 
         const { data, error } = await locals.sb.auth.signUp({
             email: body.email,
-            password: body.password
+            password: body.password,
+            options: {
+                data: {
+                    username: body.username
+                },
+            },
         })
 
         if(error) {
