@@ -7,7 +7,7 @@
 </script>
 
 <div
-	class="flex flex-row justify-evenly bg-indigo fixed bottom-0 w-full select-none"
+	class="flex flex-row justify-evenly bg-indigo fixed bottom-0 w-full select-none font-prompt"
 >
 	{#each tab as menu}
 		<a class="py-3 text-orange" href={menu.link}>{menu.label}</a>

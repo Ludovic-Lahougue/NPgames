@@ -1,6 +1,7 @@
 <script>
-	import DefaultButton from "../../lib/defaultButton.svelte";
+	import DefaultButton from "$lib/defaultButton.svelte";
 	import Title from "../../lib/title.svelte";
+	import CustomInput from "$lib/input.svelte";
 </script>
 
 <main>
@@ -8,22 +9,23 @@
 	<form action="?/login" method="post" class="row flex-center flex">
 		<div class="col-6 form-widget">
 			<div>
-				<input
-					class="inputField"
+				<CustomInput
 					type="email"
+					placeholder="exemple@email.com"
+					label="email"
 					name="email"
-					placeholder="Adresse e-mail"
 				/>
 			</div>
 			<div>
-				<input
-					class="inputField"
+				<CustomInput
+					label="email"
 					type="password"
 					name="password"
 					placeholder="Mot de passe"
 				/>
 			</div>
 			<div>
+				<DefaultButton label="Se connecter" type="submit" />
 				<input
 					type="submit"
 					class="button block"
@@ -31,10 +33,8 @@
 				/>
 			</div>
 			<div>
-				Pas de compte ? <DefaultButton
-					link="/inscription"
-					label="S'inscrire"
-				/>
+				Pas de compte ?
+				<!-- <DefaultButton link="/inscription" label="S'inscrire" /> -->
 			</div>
 		</div>
 	</form>
