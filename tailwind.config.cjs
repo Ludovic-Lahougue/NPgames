@@ -2,11 +2,7 @@
 module.exports = {
   content: ["./src/**/*.{svelte,html,js,ts}"],
   theme: {
-    extend: {
-      fontFamily: {
-        prompt: ["Prompt", "sans-serif"],
-      }
-    },
+    extend: {},
     colors: {
       orange: "#F1895C",
       indigo: "#516079",
