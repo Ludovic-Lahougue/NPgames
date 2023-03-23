@@ -5,10 +5,10 @@
 </script>
 
 <button
-	class="bg-orange border border-orange rounded-xl hover:bg-white duration-300"
+	class="bg-primary border border-primary rounded-xl hover:bg-white duration-300"
 	{type}
 >
-	<p class="py-2 px-4 text-white hover:text-orange">
+	<p class="py-2 px-4 text-white hover:text-primary">
 		{#if link}
 			<a href={link}>{label}</a>
 		{:else}

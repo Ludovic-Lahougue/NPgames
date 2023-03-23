@@ -7,6 +7,6 @@
 		NPGames
 	</p>
 	{#if subTitle}
-		<p class="text-orange text-xl">{subTitle}</p>
+		<p class="text-primary text-xl">{subTitle}</p>
 	{/if}
 </div>

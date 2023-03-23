@@ -22,7 +22,7 @@
 			/>
 			<DefaultButton label="Se connecter" type="submit" />
 			<div
-				class="hover:text-orange hover:underline cursor-pointer duration-100"
+				class="hover:text-primary hover:underline cursor-pointer duration-100"
 			>
 				Pas de compte ?
 				<!-- <DefaultButton link="/inscription" label="S'inscrire" /> -->

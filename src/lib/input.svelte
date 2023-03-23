@@ -8,7 +8,7 @@
 <div>
 	<label for={name}>{label}</label>
 	<input
-		class="rounded-lg border border-grey py-2 px-4 focus:outline-none focus:border-orange"
+		class="rounded-lg border border-grey py-2 px-4 focus:outline-none focus:border-primary"
 		{type}
 		{placeholder}
 		{name}
