@@ -21,10 +21,9 @@
 			placeholder="Mot de passe"
 		/>
 		<DefaultButton label="Se connecter" type="submit" />
-		<div
-			class="hover:text-primary hover:underline cursor-pointer duration-100"
-		>
+		<div>
 			Pas de compte ?
+			<DefaultButton label="S'inscrire" link="/inscription" underline />
 		</div>
 	</Form>
 </main>
