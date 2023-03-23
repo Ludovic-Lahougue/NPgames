@@ -1,9 +1,13 @@
 <script>
+	import NavBar from "../../lib/navBar.svelte";
+	import Title from "../../lib/title.svelte";
+
 	export let data;
 </script>
 
 <main>
-	<h1>Page des jeux</h1>
+	<Title />
+
 	<a href="/games/new">Nouveau jeu</a>
 	{#if data.games.length > 0}
 		<h3>Liste des jeux</h3>
@@ -27,4 +31,5 @@
 			{/each}
 		</ul>
 	{/if}
+	<NavBar />
 </main>

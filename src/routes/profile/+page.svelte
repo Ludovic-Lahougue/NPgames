@@ -1,6 +1,6 @@
 <script>
 	export let data;
-	import Footer from "../../lib/footer.svelte";
+	import NavBar from "../../lib/navBar.svelte";
 	import DefaultButton from "../../lib/defaultButton.svelte";
 	import Title from "../../lib/title.svelte";
 	import Form from "../../lib/form.svelte";
@@ -28,4 +28,4 @@
 		</Form>
 	{/if}
 </div>
-<Footer />
+<NavBar />

@@ -3,12 +3,15 @@
 	import Form from "../../lib/form.svelte";
 	import Title from "../../lib/title.svelte";
 	import CustomInput from "$lib/input.svelte";
+	import ArrowBack from "../../lib/arrowBack.svelte";
 </script>
 
 <main>
 	<Title subTitle="Inscription" />
 
 	<div class="px-4 flex flex-col items-center">
+		<ArrowBack link="/profile" />
+
 		<Form action="?/register" method="post">
 			<h1 class="text-xl">Création d'un compte</h1>
 			<CustomInput
