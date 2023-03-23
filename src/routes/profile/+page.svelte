@@ -12,12 +12,12 @@
 		<DefaultButton label="Déconnexion" type="submit" />
 	</form>
 {:else}
-	<div class="w-full p-4">
-		Connectez-vous pour sauvegarder vos scores !
-		<p class="font-prompt">test de Prompt</p>
-		<span>pas en Prompt</span><span class="font-prompt">a Prompt</span>
-		<DefaultButton label="S'inscrire" link="/inscription" />
-		<DefaultButton label="Se connecter" link="/connexion" />
+	<div class="w-full p-4 flex flex-col">
+		<p>Connectez-vous pour sauvegarder vos scores !</p>
+		<div class="flex flex-row justify-evenly">
+			<DefaultButton label="S'inscrire" link="/inscription" />
+			<DefaultButton label="Se connecter" link="/connexion" />
+		</div>
 	</div>
 {/if}
 <Footer />
