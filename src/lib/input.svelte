@@ -8,7 +8,7 @@
 <div class="flex flex-col">
 	<label for={name}>{label}</label>
 	<input
-		class="rounded-lg border border-grey py-2 px-4 focus:outline-none focus:border-orange"
+		class="rounded-lg bg-white bg-opacity-10 py-2 px-4 placeholder-shown:border-gray-500 autofill:bg-yellow-200"
 		{type}
 		{placeholder}
 		{name}

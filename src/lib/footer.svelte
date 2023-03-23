@@ -22,8 +22,12 @@
 	class="flex flex-row justify-evenly bg-secondary fixed bottom-0 w-full select-none font-prompt"
 >
 	{#each tab as menu}
-		<div class="text-primary flex flex-col items-center py-2">
+		<a
+			class="text-primary flex flex-col items-center py-2"
+			href={menu.link}
+		>
 			<svg
+				class="text-sm"
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 24 24"
 				width="24"
@@ -33,7 +37,7 @@
 					d={menu.img}
 				/></svg
 			>
-			<a class="text-sm" href={menu.link}>{menu.label}</a>
-		</div>
+			<p>{menu.label}</p>
+		</a>
 	{/each}
 </div>
