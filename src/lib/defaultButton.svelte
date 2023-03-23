@@ -3,12 +3,13 @@
 	export let link = null;
 	export let type = "button";
 	export let underline = false;
+	export let addClass = "";
 </script>
 
 <button
 	class={underline
 		? ""
-		: "bg-primary border border-primary rounded-xl hover:bg-white duration-300"}
+		: `${addClass} bg-primary border border-primary rounded-xl hover:bg-white duration-300`}
 	{type}
 >
 	<p

@@ -5,10 +5,10 @@
 	export let name = "";
 </script>
 
-<div>
+<div class="flex flex-col">
 	<label for={name}>{label}</label>
 	<input
-		class="rounded-lg border border-grey py-2 px-4 focus:outline-none focus:border-primary"
+		class="rounded-lg border border-grey py-2 px-4 focus:outline-none focus:border-orange"
 		{type}
 		{placeholder}
 		{name}
