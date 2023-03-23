@@ -11,19 +11,19 @@
 <div class="px-4 flex flex-col items-center">
 	{#if data.session}
 		<Form action="/logout" method="post">
-			<p>Connecté en tant que {data.username}</p>
+			<p>Hello {data.username}</p>
 			<DefaultButton
 				addClass="self-center"
-				label="Déconnexion"
+				label="Log out"
 				type="submit"
 			/>
 		</Form>
 	{:else}
 		<Form>
-			<p>Connectez-vous pour sauvegarder vos scores !</p>
+			<p>Create an account to save your best scores !</p>
 			<div class="flex flex-row justify-evenly">
-				<DefaultButton label="S'inscrire" link="/inscription" />
-				<DefaultButton label="Se connecter" link="/connexion" />
+				<DefaultButton label="Register" link="/register" />
+				<DefaultButton label="Log in" link="/login" />
 			</div>
 		</Form>
 	{/if}

@@ -7,43 +7,39 @@
 </script>
 
 <main>
-	<Title subTitle="Inscription" />
+	<Title subTitle="Register" />
 
 	<div class="px-4 flex flex-col items-center">
 		<ArrowBack link="/profile" />
 
 		<Form action="?/register" method="post">
-			<h1 class="text-xl">Création d'un compte</h1>
+			<h1 class="text-xl">Create an account</h1>
 			<CustomInput
-				label="Adresse e-mail"
+				label="e-mail adress"
 				type="email"
 				name="email"
-				placeholder="Adresse e-mail"
+				placeholder="mail.adress@gmail.com"
 			/>
 			<CustomInput
-				label="Nom d'utilisateur"
+				label="Usersame"
 				type="text"
 				name="username"
 				placeholder="DupondGaming"
 			/>
 			<CustomInput
-				label="Mot de passe"
+				label="Password"
 				type="password"
 				name="password"
-				placeholder=""
+				placeholder="********"
 			/>
 			<DefaultButton
 				addClass="self-center"
 				type="submit"
-				label="S'inscrire"
+				label="Register"
 			/>
 			<div>
-				Déjà un compte ?
-				<DefaultButton
-					link="/connexion"
-					label="Se connecter"
-					underline="true"
-				/>
+				Already have an account ?
+				<DefaultButton link="/login" label="Log in" underline="true" />
 			</div>
 		</Form>
 	</div>

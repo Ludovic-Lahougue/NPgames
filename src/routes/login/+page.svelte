@@ -7,13 +7,13 @@
 </script>
 
 <main>
-	<Title subTitle="Connexion" />
+	<Title subTitle="Login" />
 
 	<div class="px-4 flex flex-col items-center">
 		<ArrowBack link="/profile" />
 
 		<Form action="?/login" method="post">
-			<h1 class="text-xl">Connexion à votre compte</h1>
+			<h1 class="text-xl">Log in to your account</h1>
 			<CustomInput
 				type="email"
 				placeholder="exemple@email.com"
@@ -21,23 +21,19 @@
 				name="email"
 			/>
 			<CustomInput
-				label="Mot de passe"
+				label="Password"
 				type="password"
 				name="password"
-				placeholder="Mot de passe"
+				placeholder="********"
 			/>
 			<DefaultButton
 				addClass="self-center"
-				label="Se connecter"
+				label="Log in"
 				type="submit"
 			/>
 			<div>
-				Pas de compte ?
-				<DefaultButton
-					label="S'inscrire"
-					link="/inscription"
-					underline
-				/>
+				No account ?
+				<DefaultButton label="Register" link="/register" underline />
 			</div>
 		</Form>
 	</div>
