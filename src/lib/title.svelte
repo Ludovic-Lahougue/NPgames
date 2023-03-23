@@ -1,11 +1,15 @@
 <script>
 	export let subTitle = null;
+	export let link = "/";
 </script>
 
 <div class="w-full text-center py-6 ">
-	<p class="text-5xl font-bold text-transparent italic title font-sans">
+	<a
+		href={link}
+		class="text-5xl font-bold text-transparent italic title font-sans"
+	>
 		NPGames
-	</p>
+	</a>
 	{#if subTitle}
 		<p class="text-primary text-xl">{subTitle}</p>
 	{/if}
