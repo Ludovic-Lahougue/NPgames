@@ -30,6 +30,16 @@
 				>
 			</div>
 			<div>
+				<input
+					class="inputField"
+					type="text"
+					name="url"
+					placeholder="URL du jeu"
+					required
+					value={data.game.url}
+				/>
+			</div>
+			<div>
 				<input type="text" name="image" value={data.game.image} />
 			</div>
 			<div>

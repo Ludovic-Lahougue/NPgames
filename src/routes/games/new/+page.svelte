@@ -27,6 +27,15 @@
 				/>
 			</div>
 			<div>
+				<input
+					class="inputField"
+					type="text"
+					name="url"
+					placeholder="URL du jeu"
+					required
+				/>
+			</div>
+			<div>
 				<input type="text" name="image" placeholder="Image" />
 			</div>
 			<div>

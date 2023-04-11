@@ -1,7 +1,6 @@
 <script>
 	export let data;
 	import NavBar from "$lib/navBar.svelte";
-	import Button from "$lib/defaultButton.svelte";
 	import Title from "../lib/title.svelte";
 </script>
 
