@@ -24,15 +24,24 @@
 	}
 
 	function chooseAction(blockId) {
-		// console.log("button : ", minesLoc);
 		if (minesLoc.includes(blockId)) {
 			// GameOver(mines);
 			console.log("Game Over");
 		} else {
 			ShowCase(blockId, minesLoc);
-			// console.log("case ", blockId, "liste des mines :", minesLoc);
 		}
 	}
+
+	const restart = () => {
+		console.log("restart");
+		let blocksToRestart = document.querySelectorAll(".bg-white");
+		blocksToRestart.forEach((element) => {
+			element.innerHTML = "";
+			element.classList.remove("bg-white");
+			element.classList.add("bg-grey");
+		});
+		minesLoc = SetMinesLoc();
+	};
 </script>
 
 <main class="flex flex-col items-center gap-2">
@@ -48,5 +57,5 @@
 			</button>
 		{/each}
 	</div>
-	<DefaultButton label="restart" />
+	<DefaultButton label="restart" click={() => restart()} />
 </main>

@@ -4,6 +4,7 @@
 	export let type = "button";
 	export let underline = false;
 	export let addClass = "";
+	export let click = "";
 </script>
 
 <button
@@ -11,6 +12,7 @@
 		? ""
 		: `${addClass} bg-primary border border-primary rounded-xl hover:bg-white duration-300`}
 	{type}
+	on:click={click}
 >
 	<p
 		class={underline

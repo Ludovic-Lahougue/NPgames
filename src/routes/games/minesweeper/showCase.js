@@ -61,7 +61,6 @@ export function ShowCase(button, mines) {
       Win();
     }
     if (isMinesbeside(button, mines) === 0) {
-      show.innerHTML = "";
       CasesBeside(Number(button)).forEach((element) => {
         if (element > 0 && element <= nbCases) {
           ShowCase(element, mines);
