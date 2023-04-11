@@ -36,8 +36,6 @@
 					<div class="card-content">
 						<p>{data.game.description || ''}</p>
 						<a href="/games/{data.game.url}" class="btn">PLAY</a>
-						<br>
-						<a href="/games/edit/{data.game.id}">Éditer</a>
 					</div>
 				</div>
 			</div>
