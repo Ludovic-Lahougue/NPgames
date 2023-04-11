@@ -24,7 +24,7 @@
 							<h3 class="card-title">{game.name}</h3>
 							<div class="card-content">
 								<p>{game.description || ''}</p>
-								<a href="/games/{game.url}" class="btn">PLAY</a>
+								<a href="/games/{game.id}" class="btn">PLAY</a>
 								<br>
 								<a href="/games/edit/{game.id}">Éditer</a>
 							</div>
