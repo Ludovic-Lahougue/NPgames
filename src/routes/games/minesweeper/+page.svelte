@@ -1,6 +1,7 @@
 <script>
-	import ArrowBack from "../../../lib/arrowBack.svelte";
+	import ArrowBack from "$lib/arrowBack.svelte";
 	import DefaultButton from "$lib/defaultButton.svelte";
+	import { ShowCase } from "./showCase";
 
 	const gameSize = 81;
 	let tabBlocks = [];
@@ -28,8 +29,8 @@
 			// GameOver(mines);
 			console.log("Game Over");
 		} else {
-			// ShowCase(blockId, mines);
-			console.log("case ", blockId, "liste des mines :", minesLoc);
+			ShowCase(blockId, minesLoc);
+			// console.log("case ", blockId, "liste des mines :", minesLoc);
 		}
 	}
 </script>
