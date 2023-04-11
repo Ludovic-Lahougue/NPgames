@@ -1,9 +1,11 @@
 <script>
+	import ArrowBack from "../../../lib/arrowBack.svelte";
+
 	export let data;
 </script>
 
 <main>
-	<a href="/games">Retour</a>
+	<ArrowBack link="/games" />
 	<form action="?/editGame" method="post" class="row flex-center flex">
 		<div class="col-6 form-widget">
 			<h1 class="header">Modification</h1>

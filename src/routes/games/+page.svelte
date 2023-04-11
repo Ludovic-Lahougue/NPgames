@@ -6,10 +6,12 @@
 	export let data;
 </script>
 
-<main>
+<main class="mb-10">
 	<Title />
 
-	<a href="/games/new">New game</a>
+	{#if data.session && data.admin}
+		<a href="/games/new">New game</a>
+	{/if}
 	{#if data.games.length > 0}
 		<div class="game-list">
 			{#each data.games as game}
@@ -24,9 +26,11 @@
 							<h3 class="card-title">{game.name}</h3>
 							<div class="card-content">
 								<p>{game.description || ''}</p>
-								<a href="/games/{game.url}" class="btn">PLAY</a>
+								<a href="/games/{game.id}" class="btn">PLAY</a>
 								<br>
-								<a href="/games/edit/{game.id}">Éditer</a>
+								{#if data.session && data.admin}
+									<a href="/games/edit/{game.id}">Éditer</a>
+								{/if}
 							</div>
 						</div>
 				</div>
