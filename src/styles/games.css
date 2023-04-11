@@ -4,9 +4,103 @@
 
 .game-list {
     display: flex;
-    justify-content: space-around
+    justify-content: flex-start;
+    flex-direction: column;
 }
 
 .card {
-    width: 20vw;
+    position: relative;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 5px 20px #999;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.card-image {
+    position: relative;
+    height: 50vw;
+    overflow: hidden;
+}
+
+.card-image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    aspect-ratio: 1;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    transition-property: filter width; 
+    transition-duration: .7s;
+    transition-timing-function: ease;
+}
+
+.card-body {
+    text-align:center;
+    padding: 15px 20px;
+    box-sizing: border-box;
+}
+
+.card-title {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-category {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    z-index: 10;
+    background-color: #f1895c;
+    display: inline-block;
+    border-radius: 1rem;
+    padding: .1rem 1rem;
+}
+
+.card-content {
+    margin-top: 1rem;
+}
+
+.card:hover .card-image img {
+    filter: grayscale(0);
+}
+
+.btn {
+    background-color: #f1895c;
+    display: inline-block;
+    border-radius: 1rem;
+    padding: .1rem 1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 576px) {
+    .game-list {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .card {
+        width: 45%;
+        border-radius: 2vw;
+    }
+
+    .card-image {
+        height: 20vw;
+    }
+
+    .card-image img {
+        filter: grayscale(1);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .card {
+        width: 20%;
+    }
 }
