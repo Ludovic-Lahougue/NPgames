@@ -9,28 +9,26 @@
 <main>
 	<Title />
 
-	<a href="/games/new">Nouveau jeu</a>
+	<a href="/games/new">New game</a>
 	{#if data.games.length > 0}
-		<h3>Liste des jeux</h3>
 		<div class="game-list">
 			{#each data.games as game}
 				<div class="card">
-					<a href="/games/{game.url}">
-
-						<h3>
-							{game.name} <a href="/games/edit/{game.id}">Éditer</a>
-						</h3>
+						<p class="card-category">{game.category}</p>
 						{#if game.image != null}
-						<img
-						src={game.image}
-						alt={game.name}
-						width="100"
-						height="100"
-						/>
+							<div class="card-image">
+								<img src={game.image} alt={game.name} />
+							</div>
 						{/if}
-						<p>Catégorie : {game.category}</p>
-						<p>{game.description}</p>
-					</a>
+						<div class="card-body">
+							<h3 class="card-title">{game.name}</h3>
+							<div class="card-content">
+								<p>{game.description || ''}</p>
+								<a href="/games/{game.url}" class="btn">PLAY</a>
+								<br>
+								<a href="/games/edit/{game.id}">Éditer</a>
+							</div>
+						</div>
 				</div>
 			{/each}
 		</div>
