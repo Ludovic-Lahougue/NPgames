@@ -7,7 +7,7 @@ export async function load({ params, locals }) {
     if (game.data == null)
         throw error(404, 'Not found');
 
-    const scores = await locals.sb.from('score').select('date, value, unite, profiles(username)').eq('game', id).limit(10);
+    const scores = await locals.sb.from('score').select('date, value, unite, profiles(username)').eq('game', id).order('value', { ascending: true }).limit(10);
 
     let bestScore = {
         value: null,
