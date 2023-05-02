@@ -17,6 +17,7 @@ export const load = async (event) => {
     return {
         session: session,
         username: username,
-        admin: admin
+        admin: admin,
+        userId: user.id,
     }
 }

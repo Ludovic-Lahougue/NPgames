@@ -1,12 +1,10 @@
 <script>
+	export let data;
 	import ArrowBack from "$lib/arrowBack.svelte";
 	import DefaultButton from "$lib/defaultButton.svelte";
+	import { construct_svelte_component } from "svelte/internal";
 	import { ShowCase } from "./showCase";
-
-	// const number = document.getElementById("number");
-	// const left = document.getElementById("left");
-	// const rights = document.getElementById("right");
-	// let animate = false;
+	import { page } from "$app/stores";
 
 	let startTime = 0;
 	let elapsedTime = 0;
@@ -20,6 +18,18 @@
 		tabBlocks.push(i);
 	}
 
+	async function SaveScore() {
+		let res = await fetch("/api/score/time", {
+			method: "POST",
+			body: JSON.stringify({
+				player: data.userId,
+				game: data.gameId,
+				value: elapsedTime,
+			}),
+		});
+		console.log("res fetch :", res);
+	}
+
 	const start = () => {
 		startTime = Date.now();
 		score = setInterval(() => {
@@ -28,8 +38,12 @@
 		});
 	};
 
-	const stop = () => {
+	const stop = (isWin) => {
 		clearInterval(score);
+		if (isWin) {
+			console.log(`Congrat ${data.username} you win !`);
+			SaveScore();
+		}
 	};
 
 	function SetMinesLoc() {
@@ -49,7 +63,7 @@
 		if (!document.getElementById(blockId).classList.contains("bg-white")) {
 			if (minesLoc.includes(blockId)) {
 				if (elapsedTime !== 0) {
-					stop();
+					stop(false);
 				}
 				console.log("Game Over");
 			} else {
@@ -62,7 +76,7 @@
 	}
 
 	const restart = () => {
-		stop();
+		stop(false);
 		elapsedTime = 0;
 		let blocksToRestart = document.querySelectorAll(".bg-white");
 		blocksToRestart.forEach((element) => {

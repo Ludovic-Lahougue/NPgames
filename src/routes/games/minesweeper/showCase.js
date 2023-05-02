@@ -53,8 +53,7 @@ export function ShowCase(button, mines, stop) {
     show.classList.remove("bg-grey")
     show.classList.add("bg-white");
     if (document.querySelectorAll(".bg-white").length == nbCases - 10) {
-      console.log('Win !')
-      stop();
+      stop(true);
     }
     if (isMinesbeside(button, mines) === 0) {
       CasesBeside(Number(button)).forEach((element) => {
