@@ -46,18 +46,15 @@ function isMinesbeside(button, mines) {
   return memo;
 }
 
-function Win() {
-  console.log("Win !")
-}
-
-export function ShowCase(button, mines) {
+export function ShowCase(button, mines, stop) {
   let show = document.getElementById(button);
   if (show.classList.contains("bg-white")) {
   } else {
     show.classList.remove("bg-grey")
     show.classList.add("bg-white");
     if (document.querySelectorAll(".bg-white").length == nbCases - 10) {
-      Win();
+      console.log('Win !')
+      stop();
     }
     if (isMinesbeside(button, mines) === 0) {
       CasesBeside(Number(button)).forEach((element) => {

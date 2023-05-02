@@ -2,7 +2,6 @@
 	import ArrowBack from "$lib/arrowBack.svelte";
 	import DefaultButton from "$lib/defaultButton.svelte";
 	import { ShowCase } from "./showCase";
-	// import { start, stop } from "./chrono";
 
 	// const number = document.getElementById("number");
 	// const left = document.getElementById("left");
@@ -29,7 +28,7 @@
 		});
 	};
 
-	export const stop = () => {
+	const stop = () => {
 		clearInterval(score);
 	};
 
@@ -57,7 +56,7 @@
 				if (elapsedTime === 0) {
 					start();
 				}
-				ShowCase(blockId, minesLoc);
+				ShowCase(blockId, minesLoc, stop);
 			}
 		}
 	}
