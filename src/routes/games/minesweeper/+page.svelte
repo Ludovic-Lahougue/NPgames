@@ -2,6 +2,16 @@
 	import ArrowBack from "$lib/arrowBack.svelte";
 	import DefaultButton from "$lib/defaultButton.svelte";
 	import { ShowCase } from "./showCase";
+	// import { start, stop } from "./chrono";
+
+	// const number = document.getElementById("number");
+	// const left = document.getElementById("left");
+	// const rights = document.getElementById("right");
+	// let animate = false;
+
+	let startTime = 0;
+	let elapsedTime = 0;
+	let score;
 
 	const gameSize = 81;
 	let tabBlocks = [];
@@ -10,6 +20,18 @@
 	for (let i = 1; i <= gameSize; i++) {
 		tabBlocks.push(i);
 	}
+
+	const start = () => {
+		startTime = Date.now();
+		score = setInterval(() => {
+			const endTime = Date.now();
+			elapsedTime = endTime - startTime;
+		});
+	};
+
+	export const stop = () => {
+		clearInterval(score);
+	};
 
 	function SetMinesLoc() {
 		let memo = [];
@@ -24,16 +46,25 @@
 	}
 
 	function chooseAction(blockId) {
-		if (minesLoc.includes(blockId)) {
-			// GameOver(mines);
-			console.log("Game Over");
-		} else {
-			ShowCase(blockId, minesLoc);
+		// console.log(document.querySelectorAll(".bg-white").length);
+		if (!document.getElementById(blockId).classList.contains("bg-white")) {
+			if (minesLoc.includes(blockId)) {
+				if (elapsedTime !== 0) {
+					stop();
+				}
+				console.log("Game Over");
+			} else {
+				if (elapsedTime === 0) {
+					start();
+				}
+				ShowCase(blockId, minesLoc);
+			}
 		}
 	}
 
 	const restart = () => {
-		console.log("restart");
+		stop();
+		elapsedTime = 0;
 		let blocksToRestart = document.querySelectorAll(".bg-white");
 		blocksToRestart.forEach((element) => {
 			element.innerHTML = "";
@@ -46,7 +77,9 @@
 
 <main class="flex flex-col items-center gap-2">
 	<ArrowBack link="/games" />
+
 	<h1>Minesweeper game</h1>
+
 	<div
 		id="minesweeper"
 		class="grid grid-rows-9 grid-cols-9 gap-2 max-w-[95vw] max-h-[80vh] w-[80vh]"
@@ -57,5 +90,11 @@
 			</button>
 		{/each}
 	</div>
+
 	<DefaultButton label="restart" click={() => restart()} />
+
+	<div>
+		{elapsedTime.toString().slice(0, -3)},
+		{elapsedTime.toString().slice(-3)}
+	</div>
 </main>

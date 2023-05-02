@@ -47,7 +47,6 @@ function isMinesbeside(button, mines) {
 }
 
 function Win() {
-  // document.body.style.backgroundColor = "green";
   console.log("Win !")
 }
 
