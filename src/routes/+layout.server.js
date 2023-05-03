@@ -10,14 +10,14 @@ export const load = async (event) => {
     } = await event.locals.sb.auth.getUser()
     if(user != null) {
         username = user.user_metadata.username;
-        let res = await event.locals.sb.from('profiles').select('admin').eq('id', user.id).limit(1).single();
-        admin = res.data.admin || false;
+        // let res = await event.locals.sb.from('profiles').select('admin').eq('id', user.id).limit(1).single();
+        // admin = res.data.admin || false;
     }
     
     return {
         session: session,
         username: username,
-        admin: admin,
-        userId: user.id,
+        admin: false,
+        userId: user?.id,
     }
 }
